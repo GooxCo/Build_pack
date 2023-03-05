@@ -1,6 +1,8 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
+# Blog: https://helmiau.com
+# HelmiWrt by helmiau.com
 # Script base by P3TERX
 #=================================================
 
@@ -11,12 +13,11 @@ on:
     inputs:
       branch:
         type: choice
-        description: Select Openwrt Branch.
+        description: Select ImmortalWrt Branch.
         required: true
         default: openwrt-21.02
         options: 
         - master
-        - openwrt-22.03
         - openwrt-21.02
         - openwrt-18.06
         - openwrt-18.06-k5.4
@@ -24,7 +25,7 @@ on:
         type: choice
         description: Select device platform.
         required: true
-        default: armvirt/64
+        default: bcm27xx/bcm2711
         options: 
         - armvirt/32
         - armvirt/64
@@ -62,7 +63,7 @@ env:
   TZ: Asia/Jakarta
   THIS_REPO_NAME: ${{ github.event.repository.name }}
   THIS_REPO_BRANCH: ${{ github.event.repository.default_branch }}
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: ${{ github.event.inputs.branch }}
   DIY_SH: build-ipk/immortalwrt.sh
 
@@ -132,15 +133,15 @@ jobs:
       - name: Load Custom Configuration
         id: load_cfg
         if: steps.install_feeds.outputs.status == 'success' && !cancelled()
-       run: |
+        run: |
           [ -e files ] && mv files $OPENWRT_ROOT_PATH/files
           cd $OPENWRT_ROOT_PATH
           chmod +x $GITHUB_WORKSPACE/build-ipk/*.sh
           $GITHUB_WORKSPACE/$DIY_SH
           cat $GITHUB_WORKSPACE/$CONFIG_FILE >> $OPENWRT_ROOT_PATH/.config
-         echo -e "===== List of Config Files ====="
-         cat $OPENWRT_ROOT_PATH/.config
-         echo -e "===== List of Config Files ====="       
+          echo -e "===== List of Config Files ====="
+          cat $OPENWRT_ROOT_PATH/.config
+          echo -e "===== List of Config Files ====="       
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Download Package
@@ -174,9 +175,9 @@ jobs:
           grep "^CONFIG_PACKAGE_" "$GITHUB_WORKSPACE"/"$CONFIG_FILE" > "$CFGIPKX"
           sed -i '/=n/d;/#/d;/not set/d' "$CFGIPKX"
           sed -i 's/CONFIG_PACKAGE_//g;s/=y//g' "$CFGIPKX"
-          mkdir paketJJWrt
+          mkdir paketHelmiWrt
           while read -r pkgName; do
-            find . -type f -name "$pkgName*" -exec mv {} $GITHUB_WORKSPACE/openwrt/bin/packages/paketJJWrt \;
+            find . -type f -name "$pkgName*" -exec mv {} $GITHUB_WORKSPACE/openwrt/bin/packages/paketHelmiWrt \;
           done < "$CFGIPKX"
           echo "status=success" >> "$GITHUB_OUTPUT"
 
@@ -191,13 +192,13 @@ jobs:
           done
           # Checking all IPK's location
           find . -type f -name 'luci-app-*' | while read FILE ; do
-            echo -e "log:: luci app and theme located at $(readlink -f ${FILE})" ;
+            echo -e "helmilog:: luci app and theme located at $(readlink -f ${FILE})" ;
           done
           # Set LuCI Theme and App Path
           echo "LUCITHEMEPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/luci-theme" >> $GITHUB_ENV
           echo "LUCIAPPPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/luci-app" >> $GITHUB_ENV
           echo "PKGPATH=$GITHUB_WORKSPACE/openwrt/bin/packages/*/base/packages" >> $GITHUB_ENV
-          echo "paketJJWrt=$GITHUB_WORKSPACE/openwrt/bin/packages/paketJJWrt" >> $GITHUB_ENV
+          echo "paketHelmiWrt=$GITHUB_WORKSPACE/openwrt/bin/packages/paketHelmiWrt" >> $GITHUB_ENV
           # Checking Files and places
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           echo -e "===== End of Information ====="
@@ -218,7 +219,7 @@ jobs:
           touch release.txt
           echo "status=success" >> $GITHUB_OUTPUT
 
-      - name: Upload Packages to GitHub Release
+      - name: Upload HelmiWrt Packages to GitHub Release
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
@@ -231,4 +232,9 @@ jobs:
             # ${{ env.LUCITHEMEPATH }}-*
             # ${{ env.LUCIAPPPATH }}-*
             # ${{ env.PKGPATH }}/mactoiface.*
-            ${{ env.paketJJWrt }}/*
+            ${{ env.paketHelmiWrt }}/*
+          body: |
+            **HelmiWrt LuCI App and Theme IPK for OpenWrt**
+            THESE PACKAGES IS COOLSNOWWOLF LEDE FIRMWARE BASED !!!!! NOT OFFICIAL OPENWRT BASE !!!!
+            DWYOR (DO WITH YOUR OWN RISK)
+            [Donation here](https://www.helmiau.com/pay) • [Installation Tutorial](https://www.google.com/search?q=helmiau.com+helmiwrt+packages)
