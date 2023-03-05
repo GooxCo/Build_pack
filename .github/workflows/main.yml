@@ -233,8 +233,4 @@ jobs:
             # ${{ env.LUCIAPPPATH }}-*
             # ${{ env.PKGPATH }}/mactoiface.*
             ${{ env.paketHelmiWrt }}/*
-          body: |
-            **HelmiWrt LuCI App and Theme IPK for OpenWrt**
-            THESE PACKAGES IS COOLSNOWWOLF LEDE FIRMWARE BASED !!!!! NOT OFFICIAL OPENWRT BASE !!!!
-            DWYOR (DO WITH YOUR OWN RISK)
-            [Donation here](https://www.helmiau.com/pay) • [Installation Tutorial](https://www.google.com/search?q=helmiau.com+helmiwrt+packages)
+          
