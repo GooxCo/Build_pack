@@ -157,15 +157,14 @@ pushd package/community
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 # packages
-git clone --depth=1 https://github.com/JJ-Coffee/packages
+git clone https://github.com/JJ-Coffee/JJ-Package.git
 
 # Out to openwrt dir
 popd
 
-# Rename hostname to HelmiWrt
-[ -f package/base-files/files/bin/config_generate ] && sed -i 's/ImmortalWrt/HelmiWrt/g' package/base-files/files/bin/config_generate
+# Rename hostname to JJ-WRT
+[ -f package/base-files/files/bin/config_generate ] && sed -i 's/ImmortalWrt/JJ-WRT/g' package/base-files/files/bin/config_generate
 echo "Script Executed-Done!!!!!"
 
 #-----------------------------------------------------------------------------
-#   End of @helmiau terminal scripts additionals menu
 #-----------------------------------------------------------------------------
