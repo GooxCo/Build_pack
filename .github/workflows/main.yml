@@ -1,8 +1,6 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Blog: https://helmiau.com
-# HelmiWrt by helmiau.com
 # Script base by P3TERX
 #=================================================
 
@@ -219,7 +217,7 @@ jobs:
           touch release.txt
           echo "status=success" >> $GITHUB_OUTPUT
 
-      - name: Upload HelmiWrt Packages to GitHub Release
+      - name: Upload JJ-Wrt Packages to GitHub Release
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
@@ -234,7 +232,6 @@ jobs:
             # ${{ env.PKGPATH }}/mactoiface.*
             ${{ env.paketHelmiWrt }}/*
           body: |
-            **HelmiWrt LuCI App and Theme IPK for OpenWrt**
+            **JJ-Wrt LuCI App and Theme IPK for OpenWrt**
             THESE PACKAGES IS COOLSNOWWOLF LEDE FIRMWARE BASED !!!!! NOT OFFICIAL OPENWRT BASE !!!!
             DWYOR (DO WITH YOUR OWN RISK)
-            [Donation here](https://www.helmiau.com/pay) • [Installation Tutorial](https://www.google.com/search?q=helmiau.com+helmiwrt+packages)
