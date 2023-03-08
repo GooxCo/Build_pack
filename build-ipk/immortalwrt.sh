@@ -158,12 +158,12 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
-
+https://github.com/yichya/luci-app-xray.git
 # Out to openwrt dir
 popd
 
 # Rename hostname to JJ-WRT
-[ -f package/base-files/files/bin/config_generate ] && sed -i 's/ImmortalWrt/JJ-WRT/g' package/base-files/files/bin/config_generate
+[ -f package/base-files/files/bin/config_generate ] && sed -i 's/Openwrt/JJ-WRT/g' package/base-files/files/bin/config_generate
 echo "Script Executed-Done!!!!!"
 
 #-----------------------------------------------------------------------------
