@@ -158,9 +158,12 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
-git clone https://github.com/yichya/luci-app-xray.git
+svn co https://github.com/yichya/luci-app-xray/trunk/luci-app-xray package/luci-app-xray
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+Svn co https://github.com/lisaac/luci-app-diskman/trunk/luci-app-diskman package/luci-app-diskman
 # Out to openwrt dir
 popd
+
 
 # Rename hostname to JJ-WRT
 [ -f package/base-files/files/bin/config_generate ] && sed -i 's/Openwrt/JJ-WRT/g' package/base-files/files/bin/config_generate
