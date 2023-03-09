@@ -158,9 +158,9 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
-svn co https://github.com/yichya/luci-app-xray/trunk/luci-app-xray package/luci-app-xray
+git clone https://github.com/yichya/luci-app-xray.git
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
-svn co https://github.com/lisaac/luci-app-diskman/trunk/luci-app-diskman package/luci-app-diskman
+svn co https://github.com/lisaac/luci-app-diskman/branches/master/applications/luci-app-diskman lisaac/luci-app-diskman
 # Out to openwrt dir
 popd
 
