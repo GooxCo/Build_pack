@@ -158,7 +158,6 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
-git clone https://github.com/yichya/luci-app-xray.git
 # Out to openwrt dir
 popd
 
