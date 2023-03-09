@@ -154,12 +154,11 @@ pushd package/community
 
 # Add official OpenClash dev branch source
 # git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
-svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash vernesong/OpenClash
+svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
 git clone https://github.com/yichya/luci-app-xray.git
-svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 # Out to openwrt dir
 popd
 
