@@ -156,6 +156,10 @@ pushd package/community
 # git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
+#Kenzo package
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages
+
+
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
 # Out to openwrt dir
