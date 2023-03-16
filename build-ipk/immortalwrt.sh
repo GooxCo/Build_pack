@@ -157,7 +157,7 @@ pushd package/community
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 #Kenzo package
-git clone --depth=1 https://github.com/kenzok8/openwrt-packages
+git clone --depth=1 https://github.com/kenzok8/small-package
 
 
 # packages
