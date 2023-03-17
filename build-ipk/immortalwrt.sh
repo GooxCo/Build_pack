@@ -159,6 +159,8 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 #Kenzo package
 git clone --depth=1 https://github.com/kenzok8/small-package
 
+#paswall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 # packages
 git clone https://github.com/JJ-Coffee/JJ-Package.git
