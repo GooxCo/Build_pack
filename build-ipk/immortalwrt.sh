@@ -154,7 +154,7 @@ pushd package/community
 
 # Add official OpenClash dev branch source
 # git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
-#svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
+svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 #Kenzo package
 #git clone --depth=1 https://github.com/kenzok8/small-package
