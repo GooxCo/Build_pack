@@ -25,6 +25,15 @@ CONFIG_TARGET_armvirt_64=y
 CONFIG_TARGET_armvirt_64_Default=y
 
 EOF
+elif [[ $PLATFORM == *"armsr/armv8"* ]]; then
+	cat << 'EOF' > "$CFGOW"
+
+CONFIG_TARGET_armsr=y
+CONFIG_TARGET_armsr_armv8=y
+CONFIG_TARGET_armsr_armv8_DEVICE_generic=y
+
+
+EOF
 elif [[ $PLATFORM == *"bcm27xx/bcm2708"* ]]; then
 	cat << 'EOF' > "$CFGOW"
 
