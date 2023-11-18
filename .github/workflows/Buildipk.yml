@@ -15,9 +15,9 @@ on:
         type: choice
         description: Select ImmortalWrt Branch.
         required: true
-        default: v23.05.0-rc2
+        default: v23.05.0
         options: 
-        - v23.05.0-rc2
+        - v23.05.0
         - master
         - openwrt-21.02
         - openwrt-18.06
@@ -71,7 +71,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
