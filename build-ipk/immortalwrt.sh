@@ -166,7 +166,7 @@ pushd package/community
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 # badvpn
-git clone --depth=1 https://github.com/helmiau/badvpn_corkscrew
+git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
 
 #Kenzo package
 #git clone --depth=1 https://github.com/kenzok8/small-package
