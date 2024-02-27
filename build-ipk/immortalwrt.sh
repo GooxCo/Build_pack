@@ -165,6 +165,9 @@ pushd package/community
 # git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
+# badvpn
+git clone --depth=1 https://github.com/helmiau/badvpn_corkscrew
+
 #Kenzo package
 #git clone --depth=1 https://github.com/kenzok8/small-package
 #homeproxy
