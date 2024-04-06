@@ -15,9 +15,9 @@ on:
         type: choice
         description: Select ImmortalWrt Branch.
         required: true
-        default: v23.05.1
+        default: v23.05.2
         options: 
-        - v23.05.1
+        - v23.05.2
         - master
         - openwrt-21.02
         - openwrt-18.06
