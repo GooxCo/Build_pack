@@ -175,7 +175,7 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash ve
 #git clone --depth=1 https://github.com/JJ-Coffee/homeproxy
 #sing-box
 #passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 #git clone --depth=1 https://github.com/JJ-Coffee/openwrt-passwall
 # git clone --depth=1 https://github.com/brvphoenix/packages
