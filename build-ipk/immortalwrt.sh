@@ -166,7 +166,7 @@ pushd package/community
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash vernesong/OpenClash
 
 # badvpn
-git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
+#git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
 
 #Kenzo package
 #git clone --depth=1 https://github.com/kenzok8/small-package
@@ -174,7 +174,9 @@ git clone --depth=1 https://github.com/helmiau/helmiwrt-packages
 # git clone --depth=1 https://github.com/immortalwrt/homeproxy
 #git clone --depth=1 https://github.com/JJ-Coffee/homeproxy
 #sing-box
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+#passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+
 #git clone --depth=1 https://github.com/JJ-Coffee/openwrt-passwall
 # git clone --depth=1 https://github.com/brvphoenix/packages
 # packages
